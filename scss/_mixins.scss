@@ -34,7 +34,7 @@ $font-color: #000;
 // light  @include Noto_Sans(300);
 // medium @include Noto_Sans(500);
 @mixin Noto_Sans($weight: 500) {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: $weight;
 }
 

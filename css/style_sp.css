@@ -66,7 +66,7 @@ header {
   z-index: 999;
   background: #fff;
   width: 100%;
-  height: 80px;
+  height: 50px;
 }
 
 header .header_inner .head_top {
@@ -75,7 +75,7 @@ header .header_inner .head_top {
 
 header .header_inner .head_bottom {
   height: 100%;
-  padding: 0 30px;
+  padding: 0 15px;
   border-bottom: 1px solid #e2e2e2;
   display: flex;
   align-content: center;
@@ -89,7 +89,7 @@ header .header_inner .head_bottom .left_nav {
 }
 
 header .header_inner .head_bottom .left_nav .logo a img {
-  width: 145px;
+  width: 98px;
 }
 
 header .header_inner .head_bottom .mid_nav {
@@ -142,7 +142,7 @@ header .header_inner .head_bottom .mid_nav ul li.active::after {
 }
 
 header .header_inner .head_bottom .mid_nav ul li a {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #000000;
@@ -156,8 +156,8 @@ header .header_inner .head_bottom .mid_nav .menu {
 
 header .header_inner .head_bottom .mid_nav .menu.active {
   position: fixed;
-  top: 20px;
-  right: 30px;
+  top: 8px;
+  right: 15px;
   z-index: 2000;
 }
 
@@ -225,14 +225,14 @@ header .header_inner .head_bottom .right_nav ul li:not(:last-child) {
 header .header_inner .head_bottom .right_nav ul li a {
   display: flex;
   align-items: center;
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 14px;
   color: #5e5e5e;
 }
 
 header .header_inner .head_bottom .right_nav ul li a img {
-  width: 30px;
+  width: 20px;
 }
 
 header .language_layer {
@@ -264,7 +264,7 @@ header .language_layer .wrapper {
   top: 0;
   z-index: 1001;
   background-color: #fff;
-  padding: 80px 0 100px;
+  padding: 50px 0 100px;
 }
 
 header .language_layer .wrapper .lang_cont {
@@ -272,12 +272,12 @@ header .language_layer .wrapper .lang_cont {
 }
 
 header .language_layer .wrapper .lang_cont p {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 15px;
   color: #777777;
   margin-bottom: 20px;
-  padding: 0 40px 15px;
+  padding: 0 30px 15px;
   border-bottom: 1px solid #e2e2e2;
 }
 
@@ -296,7 +296,7 @@ header .language_layer .wrapper .lang_cont .lang_list {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 0 30px;
+  padding: 0 15px;
 }
 
 header .language_layer .wrapper .lang_cont .lang_list li {
@@ -304,6 +304,13 @@ header .language_layer .wrapper .lang_cont .lang_list li {
   width: 100%;
   margin-bottom: 10px;
   padding: 0 15px 10px;
+}
+
+header .language_layer .wrapper .lang_cont .lang_list li a {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #00a49e;
 }
 
 header .search_layer {
@@ -335,7 +342,7 @@ header .search_layer .wrapper {
   top: 0;
   z-index: 1001;
   background-color: #fff;
-  padding: 80px 0 100px;
+  padding: 50px 0 100px;
 }
 
 header .search_layer .wrapper .search_cont {
@@ -346,7 +353,7 @@ header .search_layer .wrapper .search_cont .search_input {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0 20px 20px;
+  padding: 0 15px 20px;
   border-bottom: 1px solid #00a49e;
 }
 
@@ -363,7 +370,7 @@ header .search_layer .wrapper .search_cont .search_input img:nth-of-type(1) {
 }
 
 header .search_layer .wrapper .search_cont .search_input input {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #777777;
@@ -409,7 +416,7 @@ header .search_layer .wrapper .search_cont .search_list li:hover a {
 }
 
 header .search_layer .wrapper .search_cont .search_list li a {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #000;
@@ -425,10 +432,16 @@ header .sp_menu_cont {
   height: 100%;
   width: 100%;
   transition: .5s ease;
-  transform: translateX(100%);
+  visibility: hidden;
+  opacity: 0;
 }
 
 header .sp_menu_cont.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+header .sp_menu_cont.active .wrapper {
   transform: translateX(0);
 }
 
@@ -447,21 +460,23 @@ header .sp_menu_cont .wrapper {
   overflow: auto;
   -webkit-overflow-scrolling: touch;
   height: 100%;
+  transition: .5s ease;
+  transform: translateX(100%);
 }
 
 header .sp_menu_cont .wrapper .input_search {
   margin-bottom: 30px;
   position: relative;
-  padding: 0 20px;
-  margin-top: 80px;
+  padding: 0 15px;
+  margin-top: 50px;
 }
 
 header .sp_menu_cont .wrapper .input_search input {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #777777;
-  padding: 15px 60px 15px 30px;
+  padding: 15px 40px 15px 30px;
   width: 100%;
   background-color: #f9f9f9;
   outline: none;
@@ -472,7 +487,7 @@ header .sp_menu_cont .wrapper .input_search img {
   width: 20px;
   position: absolute;
   top: 50%;
-  right: 50px;
+  right: 30px;
   transform: translate(0, -50%);
 }
 
@@ -484,7 +499,7 @@ header .sp_menu_cont .wrapper .sp_menu {
 
 header .sp_menu_cont .wrapper .sp_menu li {
   position: relative;
-  padding: 15px 20px;
+  padding: 15px 15px;
   border-bottom: 1px solid #e2e2e2;
   transition: .3s ease;
 }
@@ -496,7 +511,7 @@ header .sp_menu_cont .wrapper .sp_menu li:hover {
 header .sp_menu_cont .wrapper .sp_menu li a {
   display: block;
   width: 100%;
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 16px;
   color: #000;
@@ -513,7 +528,7 @@ header .sp_menu_cont .wrapper .sp_menu li::after {
 }
 
 header .sp_menu_cont .wrapper .btn_lang {
-  padding-left: 20px;
+  padding-left: 15px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
@@ -525,7 +540,7 @@ header .sp_menu_cont .wrapper .btn_lang img {
 }
 
 header .sp_menu_cont .wrapper .btn_lang span {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 500;
   font-size: 12px;
   color: #5e5e5e;
@@ -541,11 +556,11 @@ header .sp_menu_cont .wrapper .sp_menu2 {
 
 header .sp_menu_cont .wrapper .sp_menu2 li {
   position: relative;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 header .sp_menu_cont .wrapper .sp_menu2 li a {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans JP", sans-serif;
   font-weight: 300;
   font-size: 16px;
   color: #000;
@@ -564,7 +579,7 @@ header .sp_menu_cont .wrapper .sp_icon {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: 20px;
+  padding-left: 15px;
   margin-bottom: 70px;
 }
 

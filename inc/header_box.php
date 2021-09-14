@@ -6,19 +6,19 @@ $str = explode('/', $url); ?>
 		<div class="left_nav">
 			<ul>
 				<li>
-					<a href=""><img src="/images/common/img_1.svg" alt=""></a>
+					<a href=""><img src="/images/common/new_head/img_1.svg" alt=""></a>
 				</li>
 				<li>
-					<a href=""><img src="/images/common/img_2.svg" alt=""></a>
+					<a href=""><img src="/images/common/new_head/img_2.svg" alt=""></a>
 				</li>
 				<li>
-					<a href=""><img src="/images/common/img_3.svg" alt=""></a>
+					<a href=""><img src="/images/common/new_head/img_3.svg" alt=""></a>
 				</li>
 			</ul>
 		</div>
 		<div class="right_nav">
 			<a href="javascript:void(0)" class="btn_lang">
-				<img src="/images/common/globe_icon.svg" alt="">
+				<img src="/images/common/new_head/globe_icon.svg" alt="">
 				<span>日本語</span>
 			</a>
 		</div>
@@ -28,9 +28,9 @@ $str = explode('/', $url); ?>
 		<div class="left_nav">
 			<?php
 			if ($str[1] == "") {
-				echo '<h1 class="logo"><a href="/"><img src="/images/common/head_logo.svg" alt=""></a></h1>';
+				echo '<h1 class="logo"><a href="/"><img src="/images/common/new_head/head_logo.svg" alt=""></a></h1>';
 			} else {
-				echo '<p class="logo"><a href="/"><img src="/images/common/head_logo.svg" alt=""></a></p>';
+				echo '<p class="logo"><a href="/"><img src="/images/common/new_head/head_logo.svg" alt=""></a></p>';
 			}
 			?>
 		</div>
@@ -71,13 +71,13 @@ $str = explode('/', $url); ?>
 			<ul>
 				<li><a href="/" <?php if ($str[1] == "") {
 					echo ' class="here"';
-				} ?>><img src="/images/common/book_icon.svg" alt=""> 用語集</a></li>
+				} ?>><img src="/images/common/new_head/book_icon.svg" alt=""> 用語集</a></li>
 				<li><a href="/" <?php if ($str[1] == "") {
 					echo ' class="here"';
-				} ?>><img src="/images/common/mail_icon.svg" alt=""></a></li>
+				} ?>><img src="/images/common/new_head/mail_icon.svg" alt=""></a></li>
 				<li><a href="javascript:void(0)" class="btn_search" <?php if ($str[1] == "") {
 					echo ' class="here"';
-				} ?>><img src="/images/common/search_icon.svg" alt=""></a></li>
+				} ?>><img src="/images/common/new_head/search_icon.svg" alt=""></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -88,7 +88,7 @@ $str = explode('/', $url); ?>
 	<div class="wrapper">
 		<div class="input_search">
 			<input type="text" class="btn_search" placeholder="何をお探しですか？">
-			<img src="/images/common/search_icon.svg" alt="">
+			<img src="/images/common/new_head/search_icon.svg" alt="">
 		</div>
 		<ul class="sp_menu">
 			<li>
@@ -108,7 +108,7 @@ $str = explode('/', $url); ?>
 			</li>
 		</ul>
 		<a href="javascript:void(0)" class="btn_lang">
-			<img src="/images/common/globe_icon.svg" alt="">
+			<img src="/images/common/new_head/globe_icon.svg" alt="">
 			<span>日本語</span>
 		</a>
 		<ul class="sp_menu2">
@@ -128,22 +128,22 @@ $str = explode('/', $url); ?>
 		<ul class="sp_icon">
 			<li>
 				<a href="">
-					<img src="/images/common/fb_icon.png" alt="">
+					<img src="/images/common/new_head/fb_icon.png" alt="">
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<img src="/images/common/twitter_icon.png" alt="">
+					<img src="/images/common/new_head/twitter_icon.png" alt="">
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<img src="/images/common/ig_icon.png" alt="">
+					<img src="/images/common/new_head/ig_icon.png" alt="">
 				</a>
 			</li>
 			<li>
 				<a href="">
-					<img src="/images/common/youtube_icon.png" alt="">
+					<img src="/images/common/new_head/youtube_icon.png" alt="">
 				</a>
 			</li>
 		</ul>
@@ -154,38 +154,38 @@ $str = explode('/', $url); ?>
 	<div class="overlay"></div>
 	<div class="wrapper">
 		<div class="lang_cont">
-			<p><img src="/images/common/globe_icon.svg" alt=""> 言語を選択してください。</p>
+			<p><img src="/images/common/new_head/globe_icon.svg" alt=""> 言語を選択してください。</p>
 			<div class="lang_close">
-				<img src="/images/common/lang/close.png" alt="">
+				<img src="/images/common/new_head/lang/close.png" alt="">
 			</div>
 			<div class="lang_list">
 				<li>
 					<a href="" data-val="en">
-						<img src="/images/common/lang/en.png" alt="">
+						<img src="/images/common/new_head/lang/en.png" alt="">
 						英語
 					</a>
 				</li>
 				<li>
 					<a href="" data-val="jp">
-						<img src="/images/common/lang/jp.png" alt="">
+						<img src="/images/common/new_head/lang/jp.png" alt="">
 						日本語
 					</a>
 				</li>
 				<li>
 					<a href="" data-val="ch">
-						<img src="/images/common/lang/ch.png" alt="">
+						<img src="/images/common/new_head/lang/ch.png" alt="">
 						中国語
 					</a>
 				</li>
 				<li>
 					<a href="" data-val="de">
-						<img src="/images/common/lang/de.png" alt="">
+						<img src="/images/common/new_head/lang/de.png" alt="">
 						ドイツ語
 					</a>
 				</li>
 				<li>
 					<a href="" data-val="fr">
-						<img src="/images/common/lang/fr.png" alt="">
+						<img src="/images/common/new_head/lang/fr.png" alt="">
 						フランス語
 					</a>
 				</li>
@@ -199,14 +199,14 @@ $str = explode('/', $url); ?>
 	<div class="wrapper">
 		<div class="search_cont">
 			<div class="search_input">
-				<img src="/images/common/search_icon.svg" alt="">
+				<img src="/images/common/new_head/search_icon.svg" alt="">
 				<input type="text" id="searchbox">
 				<div class="arrow_search">
-				<img src="/images/common/arrow_search.png" alt="">
+				<img src="/images/common/new_head/arrow_search.png" alt="">
 				</div>
 			</div>
 			<div class="lang_close">
-				<img src="/images/common/lang/close.png" alt="">
+				<img src="/images/common/new_head/lang/close.png" alt="">
 			</div>
 			<ul class="search_list">
 				<li>

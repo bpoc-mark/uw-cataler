@@ -43,6 +43,12 @@ $('.menu').click(function(){
   }
   else if($('.search_layer').hasClass('show')){
     $('.search_layer').toggleClass('show');
+    if($('.sp_menu_cont').hasClass('active')){
+      
+    }else{
+      $('.menu span').toggleClass('show');
+      $('.menu').toggleClass('active');
+    }
   }else{
     $('.menu span').toggleClass('show');
     $('.menu').toggleClass('active');
@@ -52,6 +58,7 @@ $('.menu').click(function(){
 
 $('.sp_menu_cont .overlay').click(function(){
   $('.menu span').toggleClass('show');
+  $('.menu').toggleClass('active');
   $('.sp_menu_cont').toggleClass('active');
 });
 
@@ -70,10 +77,22 @@ $('.language_layer .lang_close').click(function(){
 
 $('.btn_search').click(function(){
   $('.search_layer').toggleClass('show');
+  if($('.sp_menu_cont').hasClass('active')){
+    
+  }else{
+    $('.menu span').toggleClass('show');
+    $('.menu').toggleClass('active');
+  }
 });
 
 $('.search_layer .overlay').click(function(){
   $('.search_layer').toggleClass('show');
+  if($('.sp_menu_cont').hasClass('active')){
+    
+  }else{
+    $('.menu span').toggleClass('show');
+    $('.menu').toggleClass('active');
+  }
 });
 
 $('.search_layer .lang_close').click(function(){
