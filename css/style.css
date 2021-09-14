@@ -533,7 +533,7 @@ header .sp_menu_cont {
   height: 100%;
   width: 100%;
   transition: .5s ease;
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 
 header .sp_menu_cont.active {
