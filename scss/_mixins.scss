@@ -38,6 +38,11 @@ $font-color: #000;
   font-weight: $weight;
 }
 
+@mixin Barlow($weight: 500) {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-weight: $weight;
+}
+
 // Medium @include YuGo;
 @mixin YuGo {
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";

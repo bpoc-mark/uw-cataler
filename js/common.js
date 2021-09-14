@@ -18,14 +18,80 @@ $(function () {
     $('html').toggleClass('no_move');
   });
 
-  var w = $(window).width();
-  if (w < 900) {
-
-  }
+  var clickAllowed = true;
+  $(window).on('resize', function () {
+    var w = $(window).width();
+    if (w > 1130) {
+      clickAllowed = true;
+      $('.language_layer').removeClass('show');
+      $('.sp_menu_cont').removeClass('active');
+      $('.search_layer').removeClass('show');
+      $('.menu').removeClass('active');
+      $('.menu span').removeClass('show');
+    }
+    else{
+      clickAllowed = false;
+      
+    }
+  })
 
 });
 
+$('.menu').click(function(){
+  if($('.language_layer').hasClass('show')){
+    $('.language_layer').toggleClass('show');
+  }
+  else if($('.search_layer').hasClass('show')){
+    $('.search_layer').toggleClass('show');
+  }else{
+    $('.menu span').toggleClass('show');
+    $('.menu').toggleClass('active');
+    $('.sp_menu_cont').toggleClass('active');
+  }
+});
 
+$('.sp_menu_cont .overlay').click(function(){
+  $('.menu span').toggleClass('show');
+  $('.sp_menu_cont').toggleClass('active');
+});
+
+
+$('.btn_lang').click(function(){
+  $('.language_layer').toggleClass('show');
+});
+
+$('.language_layer .overlay').click(function(){
+  $('.language_layer').toggleClass('show');
+});
+
+$('.language_layer .lang_close').click(function(){
+  $('.language_layer').toggleClass('show');
+});
+
+$('.btn_search').click(function(){
+  $('.search_layer').toggleClass('show');
+});
+
+$('.search_layer .overlay').click(function(){
+  $('.search_layer').toggleClass('show');
+});
+
+$('.search_layer .lang_close').click(function(){
+  $('.search_layer').toggleClass('show');
+});
+
+
+$("#searchbox").on("keyup", function() {
+  var value = $(this).val().toLowerCase();
+  if(value){
+    $(".search_list").addClass('show');
+  }else{
+    $(".search_list").removeClass('show');
+  }
+  $(".search_list li").filter(function() {
+    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+  });
+});
 
 // シンプルローディング
 const spinner = document.querySelector('#loading');
@@ -94,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Webfont読込
 window.WebFontConfig = {
   google: {
-    families: ['Barlow+Condensed:500','Oswald:400,600', 'Noto+Sans+JP:300,400,500&subset=japanese']
+    families: ['Barlow+Condensed:500','Oswald:400,600', 'Barlow+Semi+Condensed:300,400,500','Noto+Sans+JP:300,400,500&subset=japanese']
   },
   active: function () {
     sessionStorage.fonts = true;
