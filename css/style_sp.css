@@ -69,6 +69,10 @@ header {
   height: 50px;
 }
 
+header .header_inner {
+  height: 100%;
+}
+
 header .header_inner .head_top {
   display: none;
 }
