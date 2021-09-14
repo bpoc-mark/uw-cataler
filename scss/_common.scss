@@ -1,0 +1,154 @@
+/* base
+==================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+pre,
+blockquote,
+ul,
+li,
+ol,
+dl,
+dd,
+tr {
+  font-size: 16px;
+  line-height: 1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+.sp {
+  display: none !important;
+}
+
+a {
+  color: $font-color;
+  text-decoration: none;
+  transition: 0.3s;
+  &:visited {
+    color: $font-color;
+  }
+  &:hover {
+    color: $font-color;
+    text-decoration: none;
+  }
+  &:active {
+    color: $font-color;
+  }
+  &.tel {
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+/* main
+==================================*/
+main {
+  display: block; /*IE対策*/
+}
+/*　Retina対応時のCSS↓　*/
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+}
+
+/* header
+==================================*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: #fff;
+  width: 100%;
+  height: 105px;
+  .header_inner{
+    .head_top{
+      height: 32px;
+      border-bottom: 1px solid #e2e2e2;
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      .left_nav{
+        ul{
+          height: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          li{
+            height: 100%;
+            padding: 0 25px;
+            border-right: 1px solid #e2e2e2;
+            &:nth-child(1){
+              a{
+                img{
+                  width: 85px;
+                }
+              }
+            }
+            &:nth-child(2){
+              a{
+                img{
+                  width: 75px;
+                }
+              }
+            }
+            &:nth-child(3){
+              a{
+                img{
+                  width: 114px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right_nav{
+        display: flex;
+        align-items: center;
+        a{
+          img{
+            width: 16px;
+          }
+          span{
+
+          }
+        }
+      }
+    }
+  }
+}
+
+/* footer
+==================================*/
+footer {
+  background: #000;
+  margin-top: 200px;
+}
+
+#pageTop {
+  opacity: 0;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 888;
+  transition: 0.3s;
+  &.active {
+    opacity: 1;
+  }
+  a {
+    display: block;
+    width: 50px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

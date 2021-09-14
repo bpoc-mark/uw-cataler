@@ -1,0 +1,57 @@
+$pc: 900px; // PC
+$sp: 899px; // スマホ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+@mixin mq($breakpoint: md, $range: max) {
+  @media (#{$range}-width:#{map-get($breakpoints,$breakpoint)}) {
+    @content;
+  }
+}
+//@include mq(){}
+//で使えます。空の場合はmdで判断。
+//ブレイクポイントは必要な分だけ使ってください。1か所の場合はmdだけ残して数値を変えてください。
+$breakpoints: (
+  xs: 320px,
+  sm: 375px,
+  md: 800px,
+  lg: 1200px,
+  xl: 1500px,
+);
+
+// color: $font-color;
+$font-color: #000;
+
+// light  @include Noto_Sans(300);
+// medium @include Noto_Sans(500);
+@mixin Noto_Sans($weight: 500) {
+  font-family: "Noto Sans CJK JP", sans-serif;
+  font-weight: $weight;
+}
+
+// Medium @include YuGo;
+@mixin YuGo {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体";
+  font-weight: normal;
+}
+
+// Bold @include YuGo_bold;
+@mixin YuGo_bold {
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+  font-weight: bold;
+}
+// sassで「@include arrow(#fff)」など。カラーコードは変更可能。
+@mixin arrow($color: #000) {
+  border-top: 1px solid $color;
+  border-right: 1px solid $color;
+  transform: rotate(45deg);
+}
