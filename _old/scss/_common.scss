@@ -26,18 +26,27 @@ h5,
 h6 {
   line-height: 1;
 }
-.pc {
+.sp {
   display: none !important;
 }
 
 a {
   color: $font-color;
   text-decoration: none;
+  transition: 0.3s;
   &:visited {
     color: $font-color;
   }
+  &:hover {
+    color: $font-color;
+    text-decoration: none;
+  }
   &:active {
     color: $font-color;
+  }
+  &.tel {
+    pointer-events: none;
+    cursor: default;
   }
 }
 
@@ -45,6 +54,9 @@ a {
 ==================================*/
 main {
   display: block; /*IE対策*/
+}
+/*　Retina対応時のCSS↓　*/
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 }
 
 /* header
@@ -57,16 +69,81 @@ header {
   z-index: 999;
   background: #fff;
   width: 100%;
-  height: 50px;
+  height: 105px;
+  transition: .3s ease;
   // border: 1px solid;
+  &.scroll{
+    top: -32px;
+  }
+  &:hover{
+    top: 0;
+  }
   .header_inner{
-    height: 100%;
     .head_top{
-      display: none;
+      height: 32px;
+      border-bottom: 1px solid #e2e2e2;
+      display: flex;
+      align-content: center;
+      justify-content: space-between;
+      .left_nav{
+        ul{
+          height: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          li{
+            height: 100%;
+            padding: 0 25px;
+            border-right: 1px solid #e2e2e2;
+            &:nth-child(1){
+              a{
+                img{
+                  width: 85px;
+                }
+              }
+            }
+            &:nth-child(2){
+              a{
+                img{
+                  width: 75px;
+                }
+              }
+            }
+            &:nth-child(3){
+              a{
+                img{
+                  width: 114px;
+                }
+              }
+            }
+          }
+        }
+      }
+      .right_nav{
+        display: flex;
+        align-items: center;
+        padding-right: 25px;
+        a{
+          display: flex;
+          align-items: center;
+          img{
+            width: 16px;
+            margin-right: 5px;
+          }
+          span{
+            @include Noto_Sans(500);
+            font-size: 12px;
+            color: #5e5e5e;
+            background-color: #f3f3f3;
+            padding: 5px 15px;
+            border-radius: 50px;
+          }
+        }
+      }
     }
     .head_bottom{
-      height: 100%;
-      padding: 0 15px;
+      height: calc(105px - 32px);
+      padding: 0 50px;
       border-bottom: 1px solid #e2e2e2;
       display: flex;
       align-content: center;
@@ -74,11 +151,13 @@ header {
       .left_nav{
         display: flex;
         align-items: center;
-        order: 2;
+        // @media only screen and (max-width: 1130px) {
+        //   order: 2;
+        // }
         .logo{
           a{
             img{
-              width: 98px;
+              width: 111px;
             }
           }
         }
@@ -86,12 +165,17 @@ header {
       .mid_nav{
         display: flex;
         align-items: center;
-        order: 3;
+        // @media only screen and (max-width: 1130px) {
+        //   order: 3;
+        // }
         ul{
           height: 100%;
-          display: none;
+          display: flex;
           align-items: center;
           position: relative;
+          // @media only screen and (max-width: 1130px) {
+          //   display: none;
+          // }
           li{
             position: relative;
             height: 100%;
@@ -108,6 +192,9 @@ header {
               position: absolute;
               bottom: 0;
               left: 0;
+            }
+            @media only screen and (max-width: 1130px) {
+              margin: 0 5px;
             }
             &:hover{
               &::after{
@@ -131,21 +218,29 @@ header {
               @include Noto_Sans(500);
               font-size: 16px;
               color: #000000;
+              @media only screen and (max-width: 1130px) {
+                font-size: 14px;
+              }
             }
           }
         }
         .menu {
+          display: none;
           position: relative;
           // background: #000;
-          width: 31px;
+          width: 55px;
           cursor: pointer;
           // height: 55px;
+          
           &.active{
             position: fixed;
-            top: 8px;
-            right: 15px;
+            top: 20px;
+            right: 30px;
             z-index: 2000;
           }
+          // @media only screen and (max-width: 1130px) {
+          //   display: block;
+          // }
           span {
             position: absolute;
             top: 8px;
@@ -157,6 +252,7 @@ header {
             height: 3px;
             margin: auto;
             transition: 0.3s;
+            // transition-delay: .3s;
             &.line-t.show {
               top: 16px;
               transform: rotate(-45deg);
@@ -184,7 +280,9 @@ header {
         }
       }
       .right_nav{
-        order: 1;
+        // @media only screen and (max-width: 1130px) {
+        //   order: 1;
+        // }
         ul{
           height: 100%;
           display: flex;
@@ -193,7 +291,14 @@ header {
             display: flex;
             align-items: center;
             &:not(:last-child){
-              display: none;
+              margin-right: 30px;
+            }
+            &:nth-of-type(1){
+              a{
+                img{
+                  margin-right: 8px;
+                }
+              }
             }
             a{ 
               display: flex;
@@ -202,7 +307,7 @@ header {
               font-size: 14px;
               color: #5e5e5e;
               img{
-                width: 20px;
+                width: 19px;
               }
             }
           }
@@ -231,41 +336,43 @@ header {
       background-color: rgba(0, 0, 0, 0.60);
     }
     .wrapper{
-      width: 100%;
+      width: 70%;
       position: absolute;
-      top: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 1001;
       background-color: #fff;
-      padding: 50px 0 100px;
+      padding: 120px 0;
       .lang_cont{
         position: relative;
+        width: 530px;
+        margin: 0 auto;
         p{
           @include Noto_Sans(500);
-          font-size: 15px;
+          font-size: 30px;
           color: #777777;
-          margin-bottom: 20px;
-          padding: 0 30px 15px;
-          border-bottom: 1px solid #e2e2e2;
+          margin-bottom: 40px;
           img{
             position: relative;
-            top: -2px;
-            width: 16px;
-            margin-right: 10px;
+            top: -6px;
+            width: 26px;
           }
         }
         .lang_close{
-          display: none;
+          cursor: pointer;
+          width: 22px;
+          position: absolute;
+          top: 0;
+          right: 0;
         }
         .lang_list{
           display: flex;
           flex-wrap: wrap;
           justify-content: flex-start;
-          padding: 0 15px;
           li{
-            border-bottom: 1px solid #e2e2e2;
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 0 15px 10px;
+            width: calc(100% / 3);
+            margin-bottom: 20px;
             a{
               @include Noto_Sans(300);
               font-size: 16px;
@@ -297,51 +404,60 @@ header {
       background-color: rgba(0, 0, 0, 0.60);
     }
     .wrapper{
-      width: 100%;
+      width: 70%;
       position: absolute;
-      top: 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       z-index: 1001;
       background-color: #fff;
-      padding: 50px 0 100px;
+      padding: 120px 0;
       .search_cont{
         position: relative;
-        // padding: 0 20px;
+        max-width: 920px;
+        padding: 0 60px;
+        margin: 0 auto;
         .search_input{
-          position: relative;
           display: flex;
           align-items: center;
-          padding: 0 15px 20px;
+          padding: 0 20px 20px;
           border-bottom: 1px solid #00a49e;
           img{
-            display: none;
-            &:nth-of-type(1){
-              display: block;
-              width: 21px;
-              position: absolute;
-              top:15px;
-              right: 30px;
-            }
+            width: 23px;
+            margin-right: 10px;
           }
           input{
             @include Noto_Sans(500);
-            font-size: 16px;
+            font-size: 30px;
             color: #777777;
-            background-color: #f9f9f9;
             width: 100%;
             border: none;
             outline: none;
-            padding: 15px 50px 15px 20px;
+            padding-right: 20px;
           }
           .arrow_search{
-            display: none;
+            width: 120px;
+            display: flex;
+            align-items: center;
+            &::before{
+              content: "SEARCH";
+              @include Barlow(500);
+              font-size: 18px;
+              color: #00a49e;
+              padding-right: 10px;
+            }
           }
         }
         .lang_close{
-          display: none;
+          cursor: pointer;
+          width: 22px;
+          position: absolute;
+          top: 0;
+          right: 20px;
         }
         .search_list{
-          background-color: #fff;
-          padding: 20px;
+          background-color: #f9f9f9;
+          padding: 20px 0;
           max-height: 180px;
           overflow: auto;
           display: none;
@@ -350,8 +466,8 @@ header {
               display: block;
           }
           li{ 
-            padding: 15px 20px;
-            border-bottom: 1px solid #e2e2e2;
+            padding: 5px 55px;
+            
             &:hover{
               background-color: #eaf4f4;
               a{
@@ -359,9 +475,9 @@ header {
               }
             }
             a{
-              @include Noto_Sans(500);
+              @include Noto_Sans(300);
               font-size: 16px;
-              color: #000;
+              color: #777777;
             }
           }
         }
@@ -370,6 +486,7 @@ header {
   }
 
   .sp_menu_cont{
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -379,16 +496,9 @@ header {
     height: 100%;
     width: 100%;
     transition: .5s ease;
-    // transform: translateX(100%);
-    visibility: hidden;
-    opacity: 0;
+    transform: translateX(100%);
     &.active{
-      // transform: translateX(0);
-      visibility: visible;
-      opacity: 1;
-      .wrapper{
-        transform: translateX(0);
-      }
+      transform: translateX(0);
     }
     .overlay{
       background-color: rgba(0, 0, 0, 0.60);
@@ -404,18 +514,16 @@ header {
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       height: 100%;
-      transition: .5s ease;
-      transform: translateX(100%);
       .input_search{
         margin-bottom: 30px;
         position: relative;
-        padding: 0 15px;
-        margin-top: 50px;
+        padding: 0 20px;
+        margin-top: 80px;
         input{
           @include Noto_Sans(500);
           font-size: 16px;
           color: #777777;
-          padding: 15px 40px 15px 30px;
+          padding: 15px 60px 15px 30px;
           width: 100%;
           background-color: #f9f9f9;
           outline: none;
@@ -425,7 +533,7 @@ header {
           width: 20px;
           position: absolute;
           top: 50%;
-          right: 30px;
+          right: 50px;
           transform: translate(0, -50%);
         }
       } 
@@ -435,7 +543,7 @@ header {
         margin-bottom: 30px;
         li{
           position: relative;
-          padding: 15px 15px;
+          padding: 15px 20px;
           border-bottom: 1px solid #e2e2e2;
           transition: .3s ease;
           &:hover{
@@ -460,7 +568,7 @@ header {
         }
       }
       .btn_lang{
-        padding-left: 15px;
+        padding-left: 20px;
         margin-bottom: 10px;
         display: flex;
         align-items: center;
@@ -482,7 +590,7 @@ header {
         margin-bottom: 50px;
         li{
           position: relative;
-          padding: 0 15px;
+          padding: 0 20px;
           a{
             @include Noto_Sans(300);
             font-size: 16px;
@@ -502,7 +610,7 @@ header {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        padding-left: 15px;
+        padding-left: 20px;
         margin-bottom: 70px;
         li{
           margin-right: 30px;
@@ -544,5 +652,8 @@ footer {
   a {
     display: block;
     width: 50px;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }

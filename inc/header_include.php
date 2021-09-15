@@ -7,10 +7,12 @@ if ((strpos($ua, 'iPhone') !== false) || (strpos($ua, 'iPod') !== false) || (str
 <link rel="icon" type="image/vnd.microsoft.icon" href="/favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta property="og:site_name" content="<?php echo SITE_NAME ?>">
+<meta property="og:type" content="website" />
 <meta property="og:image" content="[サイトのOGP画像]" /><!-- 絶対パス、1MG以下 -->
-<meta property="og:image:alt" content="画像の説明文">
-<meta property="og:locale" content="ja_JP">
+<meta property="fb:app_id" content="[AppID]" /><!-- FacebookにOGPを表示させるためには必須 -->
 <meta name="twitter:card" content="summary" /><!-- summary_large_imageだと画像を大きく表示 -->
+<meta name="twitter:site" content="[TwitterID]" />
 <meta content="#fff" name="theme-color"><!-- Androidでアドレスバーの色指定 -->
 <meta name="format-detection" content="telephone=no"><!-- Edgeでのリンク定義回避 -->
 

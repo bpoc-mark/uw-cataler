@@ -1,17 +1,3 @@
-$pc: 900px; // PC
-$sp: 899px; // スマホ
-
-@mixin pc {
-  @media (min-width: ($pc)) {
-    @content;
-  }
-}
-@mixin sp {
-  @media (max-width: ($sp)) {
-    @content;
-  }
-}
-
 @mixin mq($breakpoint: md, $range: max) {
   @media (#{$range}-width:#{map-get($breakpoints,$breakpoint)}) {
     @content;
@@ -30,6 +16,7 @@ $breakpoints: (
 
 // color: $font-color;
 $font-color: #000;
+$green-color: #00a49e;
 
 // light  @include Noto_Sans(300);
 // medium @include Noto_Sans(500);
@@ -39,7 +26,7 @@ $font-color: #000;
 }
 
 @mixin Barlow($weight: 500) {
-  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-family: "Barlow Semi Condensed", "Noto Sans JP", sans-serif;
   font-weight: $weight;
 }
 
@@ -54,6 +41,7 @@ $font-color: #000;
   font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
   font-weight: bold;
 }
+
 // sassで「@include arrow(#fff)」など。カラーコードは変更可能。
 @mixin arrow($color: #000) {
   border-top: 1px solid $color;

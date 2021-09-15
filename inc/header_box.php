@@ -1,6 +1,72 @@
 <?php $url = $_SERVER['REQUEST_URI'];
 $str = explode('/', $url); ?>
 
+<!-- <div class="header_inner">
+
+	<div id="sub_header" class="sub_header pc">
+		<div class="flex-container">
+			<div class="menu">
+				<ul>
+					<li><a href="https://www.cataler.co.jp/tsubaki/" target="_blank"><img class="in-svg" src="/images/common/h_tsubaki.svg" alt="Tsubaki Miki"></a></li>
+					<li><a href="https://www.cataler.co.jp/train/" target="_blank"><img class="in-svg" src="/images/common/h_cataliner.svg" alt="CATALINER"></a></li>
+					<li><a href="https://www.cataler.co.jp/wakuwaku/" target="_blank"><img class="in-svg" src="/images/common/h_wakuwaku.svg" alt="WAKUWAKU理科教室"></a></li>
+				</ul>
+			</div>
+			<div class="right-menu">
+				<div class="contact"><a href="#"><img class="in-svg" src="/images/common/mail.svg" alt=""></a></div>
+				<div class="global"><a href="#"><img class="in-svg" src="/images/common/global.svg" alt=""><span>日本語</span></a></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="flex-container">
+		<?php
+		if ($str[1] == "") {
+			echo '<h1 class="logo"><a href="/"><img src="/images/common/logo.svg" alt=""></a></h1>';
+		} else {
+			echo '<p class="logo"><a href="/"><img src="/images/common/logo.svg" alt=""></a></p>';
+		}
+		?>
+		<nav>
+			<ul>
+				<li><a href="/news/" <?php if ($str[1] == "news") {
+													echo ' class="here"';
+												} ?>>ニュース</a></li>
+				<li><a href="/product/" <?php if ($str[1] == "product") {
+													echo ' class="here"';
+												} ?>>製品</a></li>
+				<li><a href="/company/" <?php if ($str[1] == "company") {
+																echo ' class="here"';
+															} ?>>企業情報</a></li>
+
+				<li><a href="/special/" <?php if ($str[1] == "special") {
+													echo ' class="here"';
+												} ?>>特徴のある活動</a></li>
+
+				<li><a href="/sus/" <?php if ($str[1] == "sus") {
+													echo ' class="here"';
+												} ?>>サステナビリティ</a></li>
+
+				<li><a href="/recruit/" <?php if ($str[1] == "recruit") {
+													echo ' class="here"';
+												} ?>>採用情報</a></li>
+			</ul>
+		</nav>
+		<div>
+			<a href="" class="pc"><span><img class="in-svg" src="/images/common/book.svg" alt=""></span>用語集</a>
+			<a href="#" class="sp"><img class="in-svg" src="/images/common/global.svg" alt=""></a>
+			<a href="" class="serch"><img class="in-svg" src="/images/common/serch.svg" alt=""></a>
+
+			<button class="menu-trigger sp">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+	</div>
+
+</div> -->
+
 <div class="header_inner">
 	<div class="head_top">
 		<div class="left_nav">

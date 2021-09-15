@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA;;oCAEoC",
+    "sources": [
+        "../scss/admin.scss"
+    ],
+    "names": [],
+    "file": "admin.css"
+}
