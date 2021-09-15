@@ -72,13 +72,13 @@ $str = explode('/', $url); ?>
 		<div class="left_nav">
 			<ul>
 				<li>
-					<a href=""><img src="/images/common/new_head/img_1.svg" alt=""></a>
+					<a href="https://www.cataler.co.jp/tsubaki/"><img src="/images/common/new_head/img_1.svg" alt=""></a>
 				</li>
 				<li>
-					<a href=""><img src="/images/common/new_head/img_2.svg" alt=""></a>
+					<a href="https://www.cataler.co.jp/train/"><img src="/images/common/new_head/img_2.svg" alt=""></a>
 				</li>
 				<li>
-					<a href=""><img src="/images/common/new_head/img_3.svg" alt=""></a>
+					<a href="https://www.cataler.co.jp/wakuwaku/"><img src="/images/common/new_head/img_3.svg" alt=""></a>
 				</li>
 			</ul>
 		</div>
@@ -103,13 +103,13 @@ $str = explode('/', $url); ?>
 
 		<nav class="mid_nav">
 			<ul>
-				<li class="active"><a href="/" <?php if ($str[1] == "") {
+				<li><a href="/news/" <?php if ($str[1] == "news") {
 					echo ' class="here"';
 				} ?>>ニュース</a></li>
-				<li><a href="/" <?php if ($str[1] == "") {
+				<li><a href="/product/" <?php if ($str[1] == "product") {
 					echo ' class="here"';
 				} ?>>製品</a></li>
-				<li><a href="/" <?php if ($str[1] == "") {
+				<li><a href="/company/" <?php if ($str[1] == "company") {
 					echo ' class="here"';
 				} ?>>企業情報</a></li>
 				<li><a href="/" <?php if ($str[1] == "") {
@@ -118,10 +118,10 @@ $str = explode('/', $url); ?>
 				<li><a href="/" <?php if ($str[1] == "") {
 					echo ' class="here"';
 				} ?>>研究開発</a></li>
-				<li><a href="/" <?php if ($str[1] == "") {
+				<li><a href="/sus/" <?php if ($str[1] == "sus") {
 					echo ' class="here"';
 				} ?>>サステナビリティ</a></li>
-				<li><a href="/" <?php if ($str[1] == "") {
+				<li><a href="/recruit" <?php if ($str[1] == "recruit") {
 					echo ' class="here"';
 				} ?>>採用情報</a></li>
 			</ul>
@@ -153,15 +153,60 @@ $str = explode('/', $url); ?>
 	<div class="overlay"></div>
 	<div class="wrapper">
 		<div class="input_search">
-			<input type="text" class="btn_search" placeholder="何をお探しですか？">
-			<img src="/images/common/new_head/search_icon.svg" alt="">
+			<input type="text" class="btn_search searchbox" placeholder="何をお探しですか？">
+			<button>
+				<img src="/images/common/new_head/search_icon.svg" alt="">
+			</button>
+			<ul class="search_list">
+				<li>
+					<a href="">
+						候補が表示されます。1
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。2
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。3
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。4
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。1
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。2
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。3
+					</a>
+				</li>
+				<li>
+					<a href="">
+						候補が表示されます。4
+					</a>
+				</li>
+				
+			</ul>
 		</div>
 		<ul class="sp_menu">
 			<li>
-				<a href="">製品･サービス</a>
+				<a href="/product/">製品･サービス</a>
 			</li>
 			<li>
-				<a href="">企業情報</a>
+				<a href="/company/">企業情報</a>
 			</li>
 			<li>
 				<a href="">特別な活動</a>
@@ -170,7 +215,7 @@ $str = explode('/', $url); ?>
 				<a href="">研究開発</a>
 			</li>
 			<li>
-				<a href="">サステナビリティ</a>
+				<a href="/sus/">サステナビリティ</a>
 			</li>
 		</ul>
 		<a href="javascript:void(0)" class="btn_lang">
@@ -265,11 +310,13 @@ $str = explode('/', $url); ?>
 	<div class="wrapper">
 		<div class="search_cont">
 			<div class="search_input">
-				<img src="/images/common/new_head/search_icon.svg" alt="">
-				<input type="text" id="searchbox">
-				<div class="arrow_search">
-				<img src="/images/common/new_head/arrow_search.png" alt="">
-				</div>
+				<button>
+					<img src="/images/common/new_head/search_icon.svg" alt="">
+				</button>
+				<input type="text" class="searchbox">
+				<button class="arrow_search">
+					<img src="/images/common/new_head/arrow_search.png" alt="">
+				</button>
 			</div>
 			<div class="lang_close">
 				<img src="/images/common/new_head/lang/close.png" alt="">

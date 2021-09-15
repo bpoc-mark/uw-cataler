@@ -183,12 +183,12 @@ $('.language_layer .lang_close').click(function(){
 });
 
 $('.btn_search').click(function(){
-  $('.search_layer').toggleClass('show');
   if($('.sp_menu_cont').hasClass('active')){
     
   }else{
     $('.menu span').toggleClass('show');
     $('.menu').toggleClass('active');
+    $('.search_layer').toggleClass('show');
   }
 });
 
@@ -207,7 +207,7 @@ $('.search_layer .lang_close').click(function(){
 });
 
 
-$("#searchbox").on("keyup", function() {
+$(".searchbox").on("keyup", function() {
   var value = $(this).val().toLowerCase();
   if(value){
     $(".search_list").addClass('show');
